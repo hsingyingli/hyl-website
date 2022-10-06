@@ -12,14 +12,11 @@ const Hero: React.FC = () => {
   let opacity = 1
   if (elContainer) {
     const { offsetTop } = elContainer
-    console.log(scrollY)
-    console.log(offsetTop)
     opacity = 1 - (Math.min(scrollY, offsetTop) * 2 / offsetTop)
-    console.log(opacity)
   }
 
   const firstLine = 'Hi, I am Hsing Ying Li'
-  const secondLine = 'welcome to my website!'
+  const secondLine = 'Welcome to my website!'
   const thirdLine = '( Machine Learning / Web development / Devops)'
 
   return (
