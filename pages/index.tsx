@@ -5,7 +5,8 @@ import useTheme from '../hooks/useTheme'
 
 const Home: NextPage = () => {
   return (
-    <div>This is Home page
+    <div>
+      This is Home page
     </div>
   )
 }

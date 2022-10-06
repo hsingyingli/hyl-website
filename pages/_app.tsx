@@ -1,11 +1,14 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import ThemeProvider from '../providers/ThemeProvider'
+import MainLayout from '../components/Layout/main'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
+      <MainLayout path={router.asPath}>
+        <Component {...pageProps} />
+      </MainLayout>
     </ThemeProvider>
   )
 }
