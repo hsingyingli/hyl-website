@@ -26,7 +26,7 @@ interface Props {
 }
 const Skills: React.FC<Props> = ({ skills }) => {
   return (
-    <div className='min-h-screen'>
+    <div className='my-10'>
       <h1 className='text-3xl font-bold my-5 text-teal-500'>Skills</h1>
       <div className='mt-10 mb-20'>
         <h2 className='text-xl my-3'>Machine Learning</h2>

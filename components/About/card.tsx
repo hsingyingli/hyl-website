@@ -1,4 +1,4 @@
-import React, { useRef, useState, Fragment } from "react";
+import React, { useRef } from "react";
 import { AboutInfo } from '../../utils/types/about'
 import useScroll from '../../hooks/useScroll'
 

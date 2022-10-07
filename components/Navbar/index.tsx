@@ -34,10 +34,14 @@ const Navbar: React.FC<Props> = ({ path }) => {
         <div className="flex gap-6">
           <ul className="hidden md:inline-flex md:items-center">
             {navItems.map((item) => {
-              const bgColor = path.includes(item.href) ? 'teal-500' : 'transparent'
+              const bgColor = path === item.href ? '#14B8A6' : 'transparent'
               return (
-                <li key={item.name} className={`bg-${bgColor} inline text-black text-md dark:text-white ml-4 p-2 rounded-lg cursor-pointer`}>
-                  {item.name}
+                <li key={item.name}
+                  style={{ backgroundColor: bgColor }}
+                  className={`bg-${bgColor} inline text-black text-md dark:text-white ml-4 p-2 rounded-lg cursor-pointer`}>
+                  <Link href={item.href}>
+                    {item.name}
+                  </Link>
                 </li>)
             })}
           </ul>
