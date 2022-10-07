@@ -14,8 +14,7 @@ const AboutCard: React.FC<AboutInfo> = ({ title, infoList }) => {
     const halfH = window.innerHeight / 2
     let current = (scrollY - offsetTop - clientHeight / 2 + halfH)
     current = current > 0 ? current : -current
-    opacity = Math.max(1 - current * 0.6 / clientHeight, 0.1)
-    console.log(opacity)
+    opacity = Math.max(1 - current * 0.5 / clientHeight, 0.1)
   }
 
   return (
