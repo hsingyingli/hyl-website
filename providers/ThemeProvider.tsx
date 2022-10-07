@@ -15,7 +15,7 @@ const ThemeContext = createContext<Theme>({ theme: 'dark', toggleTheme: () => { 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme')
+      return localStorage.getItem('theme') || 'dark'
     }
 
     if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
