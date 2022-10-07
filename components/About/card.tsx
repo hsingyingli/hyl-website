@@ -12,22 +12,20 @@ const AboutCard: React.FC<AboutInfo> = ({ title, infoList }) => {
   if (elContainer) {
     const { offsetTop, clientHeight } = elContainer
     const halfH = window.innerHeight / 2
-    let current = (scrollY - offsetTop + halfH)
+    let current = (scrollY - offsetTop - clientHeight / 2 + halfH)
     current = current > 0 ? current : -current
-    opacity = Math.max(1 - current * 0.8 / clientHeight, 0.2)
+    opacity = Math.max(1 - current * 0.6 / clientHeight, 0.1)
     console.log(opacity)
   }
 
   return (
-    <div ref={refContainer} style={{ opacity }} className='border-2 rounded-lg border-gray-300'>
-      <h1>{title}</h1>
-      <div>
-        <ul>
-          {infoList.map((info, idx) => {
-            return <li key={idx}>{info}</li>
-          })}
-        </ul>
-      </div>
+    <div ref={refContainer} style={{ opacity }} className='my-7 mx-2 p-2'>
+      <h1 className='font-bold text-xl'>{title}</h1>
+      <ul className="mt-5 list-outside list-disc">
+        {infoList.map((info, idx) => {
+          return <li key={idx} className='text-lg my-2'>{info}</li>
+        })}
+      </ul>
     </div >
   )
 }
