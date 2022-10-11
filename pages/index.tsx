@@ -19,8 +19,8 @@ const Home: NextPage<Props> = ({ skills }) => {
       <About />
       <Skills skills={skills} />
       <div className='w-full flex justify-center'>
-        <Link href='/posts' passHref>
-          <a className='mx-auto bg-teal-500 p-2 rounded-lg hover:bg-teal-400 hover:text-gray-200 duration-500'>Posts </a></Link>
+        <Link href='/notes' passHref>
+          <a className='mx-auto bg-teal-500 p-2 rounded-lg hover:bg-teal-400 hover:text-gray-200 duration-500'>Notes </a></Link>
       </div>
     </Fragment>
   )

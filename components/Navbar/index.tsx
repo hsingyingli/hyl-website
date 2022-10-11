@@ -16,8 +16,8 @@ const navItems: NavItems = [
     href: '/'
   },
   {
-    name: 'Posts',
-    href: '/posts'
+    name: 'Notes',
+    href: '/notes'
   },
 ]
 
