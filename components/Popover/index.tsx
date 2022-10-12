@@ -48,8 +48,8 @@ const PopoverMenu: React.FC<Props> = ({ notes, note, selectNote }) => {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute z-10 mt-3 w-full max-w-sm transform">
-                <div className="bg-white dark:bg-black dark:text-gray-100 border-[1px] overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 p-5 max-h-1/2 overflow-y-scroll">
+              <Popover.Panel className="absolute z-10 mt-3 w-full max-w-sm transform ">
+                <div className="bg-white dark:bg-black dark:text-gray-100 border-[1px] overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 p-5 max-h-[70vh] overflow-y-scroll">
                   {Object.entries(category).map((data) => {
                     const key = data[0]
                     const value = data[1] as Notes
