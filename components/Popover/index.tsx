@@ -54,7 +54,7 @@ const PopoverMenu: React.FC<Props> = ({ notes, note, selectNote }) => {
                     const key = data[0]
                     const value = data[1] as Notes
                     return (
-                      <Disclosure key={key} defaultOpen={true}>
+                      <Disclosure key={key} defaultOpen={false}>
                         {({ open }) => (
                           <>
                             <Disclosure.Button className="flex w-full justify-between rounded-lg bg-teal-100 px-4 py-2 my-2 text-left text-sm font-medium text-gray-900 hover:bg-teal-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
