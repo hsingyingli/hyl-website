@@ -6,6 +6,7 @@ import ScrollObserver from '../providers/ScrollObserver'
 import NoteSelector from '../providers/NotesSelector'
 import NoteLayout from '../components/Layout/NoteLayout'
 
+
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ThemeProvider>

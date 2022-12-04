@@ -1,9 +1,8 @@
-import React from "react";
-import supabase from '../../utils/supabase'
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import type { GetServerSideProps, NextPage } from 'next'
+import type { NextPage } from 'next'
+import { useRouter } from "next/router"
 import useNotes from "../../hooks/useNotes";
-import { GetNoteResponse } from "../../utils/types/note";
 
 const Markdown = dynamic(
   () => {
@@ -12,50 +11,35 @@ const Markdown = dynamic(
   { ssr: false }
 );
 
-interface Props {
-  data: GetNoteResponse
-}
-
-const Nosts: NextPage<Props> = ({ data }) => {
+const Nosts: NextPage = () => {
+  const router = useRouter();
+  const { noteId } = router.query
+  const [content, setContent] = useState("")
   const { handleSelectNote } = useNotes()
-  handleSelectNote(data.id)
 
+  useEffect(() => {
+    const fetchContent = async () => {
+      const res = await fetch(`/api/note/${noteId}`, { method: "GET" })
+      const { data, error } = await res.json()
+
+      if (error) {
+        router.push("/notes")
+        return
+      }
+
+      handleSelectNote(data.id)
+      setContent(data.content)
+    }
+
+    fetchContent()
+
+  }, [noteId])
 
   return (
     <div className="mt-4">
-      <Markdown md={data.content} />
+      <Markdown md={content} />
     </div>
   )
 }
-
-
-export const getServerSideProps: GetServerSideProps<{ data: GetNoteResponse }> = async (context) => {
-  const { noteId } = context.query
-  const { data, error } = await supabase
-    .from("notes")
-    .select(`
-          id,
-          content
-        `)
-    .eq("owner_id", process.env.OWNER_ID || "")
-    .eq("id", noteId)
-    .single()
-
-  if (error) {
-    return {
-      redirect: {
-        destination: '/notes',
-        permanent: false,
-      },
-    }
-  }
-
-  return {
-    props: {
-      data: data as GetNoteResponse,
-    },
-  }
-}
-
 
 export default Nosts
