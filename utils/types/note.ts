@@ -1,17 +1,28 @@
 type Note = {
   id: number
-  created_at: string
-  owner_id: string
-  updated_at: string
-  content: string
   title: string
-  cls_id: number
+  category: Category
+}
+
+type Category = {
+  id?: number
   category: string
 }
 
-type Notes = Array<Note>
+type CategoryGroup = {
+  [key: string]: Array<Note>
+}
+
+
+type GetNoteResponse = {
+  id: number
+  content: string
+}
+
 
 export type {
   Note,
-  Notes
+  Category,
+  CategoryGroup,
+  GetNoteResponse
 }

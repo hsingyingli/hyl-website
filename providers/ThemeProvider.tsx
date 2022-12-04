@@ -13,6 +13,7 @@ interface Theme {
 const ThemeContext = createContext<Theme>({ theme: 'dark', toggleTheme: () => { } })
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(true)
   const [theme, setTheme] = useState(() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme') || 'dark'
@@ -38,14 +39,17 @@ const ThemeProvider: React.FC<Props> = ({ children }) => {
     } else {
       root.classList.add('dark')
     }
+    setIsLoading(false)
     document.documentElement.setAttribute('data-color-mode', theme || "dark")
   }, [theme])
 
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    isLoading ? null : (
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        {children}
+      </ThemeContext.Provider>
+    )
   )
 }
 

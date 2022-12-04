@@ -1,33 +1,17 @@
-import React, { Fragment, useMemo } from 'react'
+import React, { Fragment } from 'react'
+import { useRouter } from "next/router"
 import { Popover, Transition, Disclosure } from '@headlessui/react'
 import { MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md'
-import { Note, Notes } from '../../utils/types/note'
 import useTheme from '../../hooks/useTheme'
+import useNotes from '../../hooks/useNotes'
+import { Note } from '../../utils/types/note'
 
-interface Props {
-  notes: Notes | null,
-  note: Note | null
-  selectNote: (n: Note | null) => void
-}
 
-interface LooseObject {
-  [key: string]: any
-}
-
-const PopoverMenu: React.FC<Props> = ({ notes, note, selectNote }) => {
+const PopoverMenu: React.FC = () => {
   const { theme } = useTheme()
-  const category = useMemo(() => {
-    if (notes) {
-      const groupByCategory = notes.reduce((group: LooseObject, note) => {
-        const { category } = note;
-        group[category] = group[category] ?? [];
-        group[category].push(note);
-        return group;
-      }, {});
-      return groupByCategory
-    }
-    return {}
-  }, [notes])
+  const router = useRouter()
+  const { category, selectedNoteId, handleSelectNote } = useNotes()
+
   return (
     <div>
       <Popover className="relative">
@@ -52,7 +36,7 @@ const PopoverMenu: React.FC<Props> = ({ notes, note, selectNote }) => {
                 <div className="bg-white dark:bg-black dark:text-gray-100 border-[1px] overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 p-5 max-h-[70vh] overflow-y-scroll">
                   {Object.entries(category).map((data) => {
                     const key = data[0]
-                    const value = data[1] as Notes
+                    const noteList = data[1] as Array<Note>
                     return (
                       <Disclosure key={key} defaultOpen={false}>
                         {({ open }) => (
@@ -65,19 +49,20 @@ const PopoverMenu: React.FC<Props> = ({ notes, note, selectNote }) => {
                             </Disclosure.Button>
                             <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
                               <ul>
-                                {value.map((v) => {
-                                  const isActive = v.id === note?.id
+                                {noteList.map((note) => {
+                                  const isActive = note.id === selectedNoteId
                                   const textColor = theme === 'dark' ? 'white' : 'rgb(156, 163, 175)'
                                   return (
                                     <Popover.Button
                                       onClick={() => {
-                                        selectNote(v)
+                                        handleSelectNote(note.id)
+                                        router.push(`/notes/${note.id}`)
                                       }}
                                       as={"li"}
-                                      key={v.id}
+                                      key={note.id}
                                       style={{ color: isActive ? textColor : '' }}
                                       className='cursor-pointer mb-3 hover:text-gray-400 dark:text-gray-400 dark:hover:text-white'>
-                                      {v.title}
+                                      {note.title}
                                     </Popover.Button>)
                                 })}
                               </ul>
