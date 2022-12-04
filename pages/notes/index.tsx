@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
 import type { NextPage } from 'next'
-import { Note, Notes } from "../../utils/types/note";
-import PopoverMenu from "../../components/Popover";
 const Markdown = dynamic(
   () => {
     return import("../../components/Markdown");
