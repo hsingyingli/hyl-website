@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useMemo, useState } from "react";
+import Loading from "../components/Loading";
 import { CategoryGroup, Note } from "../utils/types/note";
 
 
@@ -61,7 +62,7 @@ const NoteSelector: React.FC<Props> = ({ children }) => {
 
   return (
     isLoading ?
-      null
+      <Loading />
       : (
         <NoteSelectorContext.Provider value={{
           category,

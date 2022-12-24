@@ -7,11 +7,9 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-        keyframes: {
-          "dot-bounce": {
-            '0%, 80%, 100%': { transform: 'scale(0)' },
-            '40%': { transform: 'scale(1)' },
-          }
+        "dot-bounce": {
+          '0%, 80%, 100%': { transform: 'scale(0)' },
+          '40%': { transform: 'scale(1)' },
         },
         textbounce: {
           '0%, 100%': { transform: 'scale(1)' },
