@@ -7,6 +7,12 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
+        keyframes: {
+          "dot-bounce": {
+            '0%, 80%, 100%': { transform: 'scale(0)' },
+            '40%': { transform: 'scale(1)' },
+          }
+        },
         textbounce: {
           '0%, 100%': { transform: 'scale(1)' },
           '25%': { transform: 'scale(1, 0.5)' },
@@ -31,6 +37,7 @@ module.exports = {
       },
       animation: {
         textbounce: 'textbounce 1.5s ease-in-out infinite',
+        "dot-bounce": 'dot-bounce 1.4s infinite ease-in-out both',
       },
     },
   },
