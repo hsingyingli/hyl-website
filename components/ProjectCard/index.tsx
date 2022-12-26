@@ -25,6 +25,8 @@ const ProjectCard: React.FC<Props> = ({ project, projectId, currentProjectId }) 
     const handleScrollIntoView = () => {
       if (projectId === currentProjectId) {
         elContainer.scrollIntoView({
+          block: "center",
+          inline: "center",
           behavior: "smooth"
         })
       }

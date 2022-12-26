@@ -30,7 +30,7 @@ const ProjectSlider: React.FC<Props> = ({ projects }) => {
 
 
   return (
-    <div className="pt-[72px] w-full min-h-[calc(100vh_-_72px)] flex flex-col gap-2 items-center justify-center  relative">
+    <div className="mt-[72px] w-full min-h-[calc(100vh_-_72px)] flex flex-col gap-2 items-center justify-center  relative">
       <div className="w-full h-full grid grid-flow-col auto-cols-[100%] overflow-hidden">
         {
           projects.map((project, idx) => {
@@ -42,14 +42,14 @@ const ProjectSlider: React.FC<Props> = ({ projects }) => {
       </div>
       {
         currentProject === 0 ? null : (
-          <button className="absolute top-1/3 left-0 p-3" onClick={prevProject}>
+          <button className="absolute top-1/4 left-0 p-3" onClick={prevProject}>
             <FaAngleLeft className="w-8 h-8" />
           </button>
         )
       }
       {
         currentProject === projects.length - 1 ? null : (
-          <button className="absolute top-1/3 right-0 p-3" onClick={nextProject}>
+          <button className="absolute top-1/4 right-0 p-3" onClick={nextProject}>
             <FaAngleRight className="w-8 h-8" />
           </button>
         )
