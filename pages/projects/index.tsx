@@ -13,26 +13,7 @@ interface Props {
 
 const ProjectSlider: React.FC<Props> = ({ projects }) => {
   const [currentProject, setCurrentProject] = useState(0)
-  const projectList = Array<React.RefObject<HTMLDivElement> | null>(projects.length).fill(null).map(() => useRef<HTMLDivElement>(null))
 
-  useEffect(() => {
-    const el = projectList[currentProject].current
-    if (!el) return
-
-    const handleResize = () => {
-      el.scrollIntoView({
-        block: "start",
-        inline: "start",
-        behavior: "smooth"
-      })
-
-    }
-    handleResize()
-    window.addEventListener("resize", handleResize, false)
-
-    return () => window.removeEventListener("resize", handleResize, false)
-
-  }, [currentProject])
 
   const nextProject = () => {
     setCurrentProject(prev => {
@@ -54,9 +35,7 @@ const ProjectSlider: React.FC<Props> = ({ projects }) => {
         {
           projects.map((project, idx) => {
             return (
-              <div key={project.id} ref={projectList[idx]}>
-                <ProjectCard project={project} />
-              </div>
+              <ProjectCard key={project.id} project={project} projectId={idx} currentProjectId={currentProject} />
             )
           })
         }
