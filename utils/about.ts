@@ -5,7 +5,7 @@ const abouts: AboutInfos = [
     infoList: [
       'Teaching Assistant, Calculus.'
       , 'Teaching Assistant, Data Structures.'
-      , 'Teaching Assistant, Databases Sysyem.'
+      , 'Teaching Assistant, Databases System.'
       , 'Teaching Assistant, Algorithm.'
       , 'Published paper in 2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC).'
       , 'Graduated from Fu Jen Catholic University with a master degree in computer science and information engineering'
