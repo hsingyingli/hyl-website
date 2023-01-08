@@ -2,36 +2,6 @@
   "projects": [
     {
       "id": 1,
-      "title": "Markdown Editor",
-      "image": [
-        "https://drive.google.com/uc?export=view&id=1nGwUtZdhWvzMAxzg6zJ2ChDPaSzeIxAV"
-      ],
-      "description": "A Markdown Editor app using Next.js, Supabase, and TailwindCSS.",
-      "website": "https://hyl-md-notebook.vercel.app",
-      "source": "https://github.com/hsingyingli/hyl-md-notebook",
-      "stack": [
-        "Next.js",
-        "Supabase",
-        "TailwindCSS"
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Travel Map",
-      "image": [
-        "https://drive.google.com/uc?export=view&id=1C-0YqhAHwHeQtbWk3xlg1dlBarvCylcj"
-      ],
-      "description": "Travel map app provides restaurants, attractions, and hotel searching services based on the given location.",
-      "website": "https://travel-map-rust.vercel.app/",
-      "source": "https://github.com/hsingyingli/travel-map",
-      "stack": [
-        "React",
-        "styled-components",
-        "google api"
-      ]
-    },
-    {
-      "id": 3,
       "title": "Slack Clone",
       "image": [
         "https://drive.google.com/uc?export=view&id=1qXX2klc_xsBzLxwg4TgFYHyOMJK-iYAp"
@@ -49,6 +19,55 @@
         "AWS RDS",
         "AWS ECR",
         "Gitlab CICD"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Netflix Clone",
+      "image": [
+        "https://drive.google.com/uc?export=view&id=15lxWdHZomE1Ahl2qy8H6bKlTZLZqVnMF"
+      ],
+      "description": "This netflix project provides token-based authentication. User can watch videos provided by youtube api.",
+      "website": "https://netflix-clone-frontend-rho.vercel.app/",
+      "source": "https://gitlab.com/hsingyingli/netflix-clone-frontend",
+      "backend": "https://gitlab.com/hsingyingli/netflix-clone-backend",
+      "stack": [
+        "Next.js",
+        "CSS module",
+        "Node.js",
+        "Typescript",
+        "Docker",
+        "Jenkins CICD"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Markdown Editor",
+      "image": [
+        "https://drive.google.com/uc?export=view&id=1nGwUtZdhWvzMAxzg6zJ2ChDPaSzeIxAV"
+      ],
+      "description": "A Markdown Editor app using Next.js, Supabase, and TailwindCSS.",
+      "website": "https://hyl-md-notebook.vercel.app",
+      "source": "https://github.com/hsingyingli/hyl-md-notebook",
+      "stack": [
+        "Next.js",
+        "Supabase",
+        "TailwindCSS"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Travel Map",
+      "image": [
+        "https://drive.google.com/uc?export=view&id=1C-0YqhAHwHeQtbWk3xlg1dlBarvCylcj"
+      ],
+      "description": "Travel map app provides restaurants, attractions, and hotel searching services based on the given location.",
+      "website": "https://travel-map-rust.vercel.app/",
+      "source": "https://github.com/hsingyingli/travel-map",
+      "stack": [
+        "React",
+        "styled-components",
+        "google api"
       ]
     }
   ]
