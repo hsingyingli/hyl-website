@@ -6,10 +6,12 @@ import Link from "next/link";
 
 interface Props {
   project: Project
+  id: number
+  total: number
 }
 
 
-const ProjectCard: React.FC<Props> = ({ project }) => {
+const ProjectCard: React.FC<Props> = ({ project, id, total }) => {
 
   const keys = Object.keys(project)
   const fields = keys.filter((key) => !["id", "title", "image", "description"].includes(key))
@@ -22,7 +24,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         <div className="relative w-[225px] h-[150px] sm:w-[450px] sm:h-[300px] rounded-lg overflow-hidden">
           <Image layout="fill" src={project.image[0]} alt={project.title} />
         </div>
-        <h1 className="text-3xl mt-4">{project.title}</h1>
+        <h1 className="text-2xl mt-4">{`Case: ${id} of ${total}:  ${project.title}`}</h1>
         <p className="mt-4 leading-6">{project.description}</p>
         <div className="mt-4">
           <ul>

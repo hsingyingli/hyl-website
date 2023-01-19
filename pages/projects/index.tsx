@@ -51,7 +51,7 @@ const ProjectSlider: React.FC<Props> = ({ projects }) => {
         {
           projects.map((project, idx) => {
             return (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard key={project.id} project={project} id={idx + 1} total={projects.length} />
             )
           })
         }
