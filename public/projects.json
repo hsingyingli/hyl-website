@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Slack Clone",
       "image": [
-        "https://drive.google.com/uc?export=view&id=1qXX2klc_xsBzLxwg4TgFYHyOMJK-iYAp"
+        "/slack-clone.png"
       ],
       "description": "This slack clone project provides token-based authentication and a real-time chat room. Users can create a workspace and invite other users to join.",
       "website": "https://slack-clone-frontend-beige.vercel.app",
@@ -25,7 +25,7 @@
       "id": 2,
       "title": "Netflix Clone",
       "image": [
-        "https://drive.google.com/uc?export=view&id=15lxWdHZomE1Ahl2qy8H6bKlTZLZqVnMF"
+        "/netflix-clone.png"
       ],
       "description": "This netflix project provides token-based authentication. User can watch videos provided by youtube api.",
       "website": "https://netflix-clone-frontend-rho.vercel.app/",
@@ -44,7 +44,7 @@
       "id": 3,
       "title": "Markdown Editor",
       "image": [
-        "https://drive.google.com/uc?export=view&id=1nGwUtZdhWvzMAxzg6zJ2ChDPaSzeIxAV"
+        "/md-editor.png"
       ],
       "description": "A Markdown Editor app using Next.js, Supabase, and TailwindCSS.",
       "website": "https://hyl-md-notebook.vercel.app",
@@ -59,7 +59,7 @@
       "id": 4,
       "title": "Travel Map",
       "image": [
-        "https://drive.google.com/uc?export=view&id=1C-0YqhAHwHeQtbWk3xlg1dlBarvCylcj"
+        "/travel-map.png"
       ],
       "description": "Travel map app provides restaurants, attractions, and hotel searching services based on the given location.",
       "website": "https://travel-map-rust.vercel.app/",

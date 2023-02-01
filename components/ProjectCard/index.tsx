@@ -22,7 +22,7 @@ const ProjectCard: React.FC<Props> = ({ project, id, total }) => {
     <div className="w-full h-full">
       <div className="p-4 flex items-center flex-col gap-2">
         <div className="relative w-[225px] h-[150px] sm:w-[450px] sm:h-[300px] rounded-lg overflow-hidden">
-          <Image layout="fill" src={project.image[0]} alt={project.title} />
+          <Image priority={true} layout="fill" src={project.image[0]} alt={project.title} />
         </div>
         <h1 className="text-2xl mt-4">{`Case: ${id} of ${total}:  ${project.title}`}</h1>
         <p className="mt-4 leading-6">{project.description}</p>

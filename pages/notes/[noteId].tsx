@@ -12,6 +12,9 @@ const Markdown = dynamic(
   { ssr: false }
 );
 
+
+
+
 const Nosts: NextPage = () => {
   const router = useRouter();
   const { noteId } = router.query
