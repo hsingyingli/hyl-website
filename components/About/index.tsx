@@ -1,9 +1,12 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import AboutCard from "./card";
-import { abouts } from '../../utils/about'
+import { AboutInfos } from "../../utils/types/about";
 
+interface Props {
+  abouts: AboutInfos
+}
 
-const About = () => {
+const About: React.FC<Props> = ({ abouts }) => {
   return (
     <section className='min-h-screen my-10'>
       <h1 className='text-3xl font-bold mb-5 text-teal-500'>About me</h1>

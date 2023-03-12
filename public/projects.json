@@ -2,6 +2,23 @@
   "projects": [
     {
       "id": 1,
+      "title": "MicroService - ecommerce store",
+      "image": [
+        "/collection.jpeg"
+      ],
+      "description": "Simple ecommerce store app built with microservices-based architecture. Technical Stack includes golang(gin), react(nextjs, tailwindCSS), rabbitMQ, GRPC, and docker.",
+      "website": "https://github.com/hsingyingli/micro-service-ecommerce-store",
+      "source": "https://slack-clone-frontend-beige.vercel.app",
+      "stack": [
+        "Next",
+        "TailwindCSS",
+        "Golang",
+        "RabbitMQ",
+        "GRPC"
+      ]
+    },
+    {
+      "id": 2,
       "title": "Slack Clone",
       "image": [
         "/slack-clone.png"
@@ -22,7 +39,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Netflix Clone",
       "image": [
         "/netflix-clone.png"
@@ -41,7 +58,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "Markdown Editor",
       "image": [
         "/md-editor.png"
@@ -56,7 +73,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Travel Map",
       "image": [
         "/travel-map.png"

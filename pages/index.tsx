@@ -7,16 +7,18 @@ import About from '../components/About'
 import Hero from '../components/Hero'
 import Skills from '../components/Skills'
 import { ItemList } from '../utils/types/skill'
+import { AboutInfos } from '../utils/types/about'
 
 interface Props {
   skills: ItemList
+  abouts: AboutInfos
 }
 
-const Home: NextPage<Props> = ({ skills }) => {
+const Home: NextPage<Props> = ({ skills, abouts }) => {
   return (
     <Fragment>
       <Hero />
-      <About />
+      <About abouts={abouts} />
       <Skills skills={skills} />
       <div className='w-full flex justify-around'>
         <Link href='/notes' passHref>
@@ -31,11 +33,15 @@ const Home: NextPage<Props> = ({ skills }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const rawData = fs.readFileSync(path.join('public', 'skills.json'), 'utf8')
-  const data = JSON.parse(rawData)
+  const skillsData = fs.readFileSync(path.join('public', 'skills.json'), 'utf8')
+  const skills = JSON.parse(skillsData)
+  const infoData = fs.readFileSync(path.join('public', 'about.json'), 'utf8')
+  const info = JSON.parse(infoData)
+
   return {
     props: {
-      skills: data.skills
+      skills: skills.skills,
+      abouts: info.abouts
     }
   }
 }

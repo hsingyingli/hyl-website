@@ -15,8 +15,16 @@ type CategoryGroup = {
 
 
 type GetNoteResponse = {
-  id: number
-  content: string
+  data: {
+    id: number
+    content: string
+  } | null,
+  error: string | null
+}
+
+type GetNoteIdResponse = {
+  data: Array<number>
+  error: string | null
 }
 
 
@@ -24,5 +32,6 @@ export type {
   Note,
   Category,
   CategoryGroup,
-  GetNoteResponse
+  GetNoteResponse,
+  GetNoteIdResponse
 }
